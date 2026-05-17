@@ -28,6 +28,9 @@ const LoginPage: React.FC = () => {
             pauseBetweenAnimations={1}
           />
         </div>
+        <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-4">
+          这是一个用于任务与日程管理的应用，支持任务记录、筛选与统计。
+        </p>
         <h1 className="text-2xl font-bold text-center mb-6">登录</h1>
         <LoginForm />
         <div className="mt-4 text-center">
