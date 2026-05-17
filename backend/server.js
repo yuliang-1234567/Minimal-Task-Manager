@@ -1,8 +1,11 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
 const config = require('./config/config');
 const userRoutes = require('./routes/userRoutes');
 const taskRoutes = require('./routes/taskRoutes');
+const aiRoutes = require('./routes/aiRoutes');
 const { Sequelize, DataTypes } = require('sequelize');
 const mysql = require('mysql2/promise');
 
@@ -193,6 +196,7 @@ app.use((req, res, next) => {
 // 路由
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/ai', aiRoutes);
 
 // 健康检查
 app.get('/health', (req, res) => {

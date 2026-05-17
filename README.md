@@ -34,6 +34,13 @@
 - 前后端接口设计
 - 数据增删改查、异常处理
 
+### 7. AI 智能辅助模块（DeepSeek）
+- 任务拆解为可执行步骤
+- 任务优先级与耗时估算
+- 日程安排建议
+- 任务描述润色
+- 自然语言搜索任务
+
 ## 技术栈
 
 ### 前端
@@ -81,12 +88,18 @@ npm run build
 cd backend
 ```
 
-2. 安装依赖
+2. 配置环境变量
+```bash
+cp .env.example .env
+```
+在 `.env` 中填入 `DEEPSEEK_API_KEY` 等配置。
+
+3. 安装依赖
 ```bash
 npm install
 ```
 
-3. 启动服务器
+4. 启动服务器
 ```bash
 npm run start
 ```
@@ -153,6 +166,13 @@ backend/
 - `DELETE /api/tasks/:id` - 删除任务
 - `PATCH /api/tasks/:id/toggle` - 切换任务完成状态
 - `GET /api/tasks/stats/summary` - 获取任务统计
+
+### AI 相关接口
+- `POST /api/ai/breakdown` - AI 拆解任务
+- `POST /api/ai/priority-estimate` - AI 估算优先级与耗时
+- `POST /api/ai/polish` - AI 润色文本
+- `POST /api/ai/schedule` - AI 日程建议
+- `POST /api/ai/search` - AI 自然语言搜索
 
 ## 数据库设计
 

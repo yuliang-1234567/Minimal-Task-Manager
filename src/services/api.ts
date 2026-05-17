@@ -95,4 +95,61 @@ export const api = {
       return response.json();
     },
   },
+  ai: {
+    breakdown: async (token: string, payload: { title: string; description?: string }) => {
+      const response = await fetch(`${API_BASE_URL}/ai/breakdown`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    },
+    priorityEstimate: async (token: string, payload: { title: string; description?: string; dueDate?: string }) => {
+      const response = await fetch(`${API_BASE_URL}/ai/priority-estimate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    },
+    polish: async (token: string, payload: { text: string; style?: string }) => {
+      const response = await fetch(`${API_BASE_URL}/ai/polish`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    },
+    schedule: async (token: string, payload: { rangeDays?: number; workingHours?: string }) => {
+      const response = await fetch(`${API_BASE_URL}/ai/schedule`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    },
+    search: async (token: string, payload: { query: string }) => {
+      const response = await fetch(`${API_BASE_URL}/ai/search`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    },
+  },
 };

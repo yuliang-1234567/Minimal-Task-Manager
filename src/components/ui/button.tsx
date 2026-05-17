@@ -19,17 +19,17 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const variantClasses = {
-    primary: 'bg-primary text-white hover:bg-primary/90',
-    secondary: 'bg-secondary text-white hover:bg-secondary/90',
-    success: 'bg-success text-white hover:bg-success/90',
-    warning: 'bg-warning text-white hover:bg-warning/90',
-    danger: 'bg-danger text-white hover:bg-danger/90',
+    primary: 'bg-primary text-white shadow hover:bg-blue-600 hover:shadow-md active:bg-blue-700',
+    secondary: 'bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 active:bg-gray-100 dark:active:bg-gray-600',
+    success: 'bg-emerald-600 text-white shadow hover:bg-emerald-700 active:bg-emerald-800',
+    warning: 'bg-amber-500 text-white shadow hover:bg-amber-600 active:bg-amber-700',
+    danger: 'bg-rose-500 text-white shadow hover:bg-rose-600 active:bg-rose-700',
   };
 
   const sizeClasses = {
-    sm: 'px-3 py-1 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg',
+    sm: 'px-3 py-1.5 text-sm font-medium',
+    md: 'px-4 py-2 text-sm font-medium',
+    lg: 'px-6 py-3 text-base font-semibold',
   };
 
   return (
@@ -45,8 +45,8 @@ const Button: React.FC<ButtonProps> = ({
         focus:outline-none
         focus:ring-2
         focus:ring-offset-2
-        focus:ring-primary/50
-        disabled:opacity-50
+        focus:ring-indigo-500/50
+        disabled:opacity-60
         disabled:cursor-not-allowed
         ${className}
       `}
